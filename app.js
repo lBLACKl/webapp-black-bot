@@ -25,13 +25,9 @@ Telegram.WebApp.onEvent('mainButtonClick', () => {
 });
 
 
-let usercard = document.querySelector('.user_card');
+let usercard = document.querySelector('.user__block');
 
 let p = document.createElement('p');
-
-
-console.log(tg.initDataUnsafe)
-
 
 p.innerHTML = `${tg.initDataUnsafe.user.first_name}` +
             + `<br>` +
