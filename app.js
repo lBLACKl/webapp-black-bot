@@ -19,6 +19,8 @@ buttons.forEach((button, index) => {
             if (current === index) {
                 tg.MainButton.hide();
                 clicked = false;
+                e.target.classList.remove('active');
+                e.target.textContent = 'Add to cart';
             } else {
                 tg.MainButton.setText('Вы выбрали товар ' + (index+1));
                 item = index+1;
@@ -28,6 +30,8 @@ buttons.forEach((button, index) => {
             tg.MainButton.setText('Вы выбрали товар ' + (index+1));
             item = index+1;
             clicked = true;
+            e.target.classList.add('active');
+            e.target.textContent = 'Added';
             current = index;
             tg.MainButton.show();
         }
