@@ -7,17 +7,38 @@ tg.MainButton.color = '#0088cc';
 
 let item = '';
 
+let clicked = false;
+let current = '';
+
 let buttons = document.querySelectorAll('.item__button');
 buttons.forEach((button, index) => {
     button.addEventListener('click', event => {
         console.log('Вы выбрали товар ' + (index+1));
-        if (tg.MainButton.isVisible) {
-            tg.MainButton.hide();
+        // if (tg.MainButton.isVisible) {
+        if (clicked) {
+            if (current === index) {
+                tg.MainButton.hide();
+                clicked = false;
+            } else {
+                tg.MainButton.setText('Вы выбрали товар ' + (index+1));
+                item = index+1;
+                current = index;
+            }
         } else {
             tg.MainButton.setText('Вы выбрали товар ' + (index+1));
-            item = '1';
+            item = index+1;
+            clicked = true;
+            current = index;
             tg.MainButton.show();
         }
+
+        // } else {
+        //     tg.MainButton.setText('Вы выбрали товар ' + (index+1));
+        //     item = index+1;
+        //     clicked = true;
+        //     current = index;
+        //     tg.MainButton.show();
+        // }
     })
 });
 
