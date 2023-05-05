@@ -60,6 +60,12 @@ body {
     background-color: #5db662;
 }
 
+.item__button.active{
+    background-color: #f6f9f6;
+    color: #5db662;
+    border: 1px solid #5db662;
+}
+
 .user__block {
     padding: 24px 0;
     text-align: center;
