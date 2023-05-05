@@ -29,6 +29,10 @@ let usercard = document.querySelector('.user_card');
 
 let p = document.createElement('p');
 
+
+alert(tg.initDataUnsafe);
+
+
 p.innerHTML = `${tg.initDataUnsafe.user.first_name}` +
             + `<br>` +
             + `${tg.initDataUnsafe.user.last_name}`;
